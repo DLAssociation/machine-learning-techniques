@@ -14,7 +14,7 @@ public:
 	std::string filePath;
 
 	vector<vector<double>> trainingData;
-	TrainingDataImporter(string path);
+	TrainingDataImporter(std::string path);
 	vector<vector<double>> getTrainingData();
 	void readCSV();
 };

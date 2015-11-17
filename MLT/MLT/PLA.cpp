@@ -2,23 +2,24 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include "PLA.h"
 
 using namespace std;
-/*
-struct Item
+
+struct PLA::Item
 {
 	int x0;
 	double x1, x2, x3, x4;
 	int label;
 };
 
-struct Weight
+struct PLA::Weight
 {
 	double w0, w1, w2, w3, w4;
 } W0 = { 0, 0, 0, 0, 0 };
 
 //Sign function
-int sign(int s)
+int PLA::sign(int s)
 {
 	if (s < 1)
 		return -1;
@@ -29,13 +30,13 @@ int sign(int s)
 }
 
 //Dot Product
-double dotProduct(Item item, Weight weight)
+double PLA::dotProduct(Item item, Weight weight)
 {
 	return item.x0 * weight.w0 + item.x1 * weight.w1 + item.x2 * weight.w2 + item.x3 * weight.w3 + item.x4 * weight.w4;
 }
 
 //Weight update
-Weight updateWeight(Item item, Weight weight)
+PLA::Weight PLA::updateWeight(Item item, Weight weight)
 {
 	Weight newWeight;
 	newWeight.w0 = weight.w0 + item.x0 * item.label;
@@ -48,7 +49,7 @@ Weight updateWeight(Item item, Weight weight)
 
 
 //PLA
-Weight goPLA(vector<Item> item)
+PLA::Weight PLA::goPLA(vector<Item> item)
 {
 	Weight wit = W0;
 	vector<Item> vItem;
@@ -66,4 +67,3 @@ Weight goPLA(vector<Item> item)
 	}
 	return wit;
 }
-*/

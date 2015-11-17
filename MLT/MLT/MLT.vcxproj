@@ -145,6 +145,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MLT.h" />
     <ClInclude Include="PLA.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />

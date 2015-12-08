@@ -12,7 +12,7 @@ using namespace std;
 int main(int argc, const char * argv[])
 {
 	//please set the path of your trainning dataset here 
-	TrainingDataImporter tdi("C:\\WorkSpace\\GitHub Projects\\NTU_ML_Course\\machine-learning-foundation\\trainingDataset.csv");
+	TrainingDataImporter tdi("trainingDataset.csv");
 	vector<PLA::Item> data;
 
 
@@ -29,8 +29,8 @@ int main(int argc, const char * argv[])
 		data.push_back(data_);
 	}
 
-	PLA pla = PLA();
-	PLA::Weight wit = pla.PLA::goPLA(data);
+	PLA pla = PLA(data);
+	PLA::Weight wit = pla.goPLA(data);
 
 	cout << "The final w vector:" << endl;
 	cout << "w0 = " << wit.w0 << "; w1 = " << wit.w1 << "; w2 = " << wit.w2 << "; w3 = " << wit.w3 << "; w4 = " << wit.w4 << endl;

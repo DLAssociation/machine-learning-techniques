@@ -18,15 +18,15 @@ int PLA::sign(int s)
 }
 
 //Dot Product
-double PLA::dotProduct(Item item, Weight weight)
+double PLA::dotProduct(PLA_item item, PLA_weight weight)
 {
 	return item.x0 * weight.w0 + item.x1 * weight.w1 + item.x2 * weight.w2 + item.x3 * weight.w3 + item.x4 * weight.w4;
 }
 
 //Weight update
-PLA::Weight PLA::updateWeight(Item item, Weight weight)
+PLA::PLA_weight PLA::updateWeight(PLA_item item, PLA_weight weight)
 {
-	Weight newWeight;
+	PLA_weight newWeight;
 	newWeight.w0 = weight.w0 + item.x0 * item.label;
 	newWeight.w1 = weight.w1 + item.x1 * item.label;
 	newWeight.w2 = weight.w2 + item.x2 * item.label;
@@ -35,16 +35,15 @@ PLA::Weight PLA::updateWeight(Item item, Weight weight)
 	return newWeight;
 }
 
-
 //PLA
-PLA::Weight PLA::goPLA(vector<Item> item)
+PLA::PLA_weight PLA::goPLA(vector<PLA_item> item)
 {
-	Weight wit = W0;
-	vector<Item> vItem;
+	PLA_weight wit = {0, 0, 0, 0, 0};
+	vector<PLA_item> vItem;
 
 	vItem = item;
 
-	for (vector<Item>::iterator iter = vItem.begin(); iter != vItem.end(); ++iter)
+	for (vector<PLA_item>::iterator iter = vItem.begin(); iter != vItem.end(); ++iter)
 	{
 		//mistake occur 
 		if ((*iter).label != sign(dotProduct(*iter, wit)))
@@ -56,7 +55,12 @@ PLA::Weight PLA::goPLA(vector<Item> item)
 	return wit;
 }
 
-PLA::PLA()
+PLA::PLA(vector<PLA_item> item)
+{
+	PLA_weight wit = PLA::goPLA(item);
+}
+
+PLA::~PLA()
 {
 
 }

@@ -34,5 +34,6 @@ int main(int argc, const char * argv[])
 
 	cout << "The final w vector:" << endl;
 	cout << "w0 = " << wit.w0 << "; w1 = " << wit.w1 << "; w2 = " << wit.w2 << "; w3 = " << wit.w3 << "; w4 = " << wit.w4 << endl;
+	cout << "try" << endl;
 	return 0;
 }

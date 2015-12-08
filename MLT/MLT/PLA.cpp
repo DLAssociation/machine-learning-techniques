@@ -6,18 +6,6 @@
 
 using namespace std;
 
-struct PLA::Item
-{
-	int x0;
-	double x1, x2, x3, x4;
-	int label;
-};
-
-struct PLA::Weight
-{
-	double w0, w1, w2, w3, w4;
-} W0 = { 0, 0, 0, 0, 0 };
-
 //Sign function
 int PLA::sign(int s)
 {
@@ -66,4 +54,9 @@ PLA::Weight PLA::goPLA(vector<Item> item)
 		}
 	}
 	return wit;
+}
+
+PLA::PLA()
+{
+
 }

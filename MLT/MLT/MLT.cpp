@@ -13,12 +13,12 @@ int main(int argc, const char * argv[])
 {
 	//please set the path of your trainning dataset here 
 	TrainingDataImporter tdi("C:\\WorkSpace\\GitHub Projects\\NTU_ML_Course\\machine-learning-foundation\\trainingDataset.csv");
-	vector<Item> data;
+	vector<PLA::Item> data;
 
 
 	for (int i = 0; i < tdi.trainingData.size(); i++)
 	{
-		Item data_;
+		PLA::Item data_;
 		data_.x0 = tdi.trainingData[i][0];
 		data_.x1 = tdi.trainingData[i][1];
 		data_.x2 = tdi.trainingData[i][2];
@@ -29,7 +29,8 @@ int main(int argc, const char * argv[])
 		data.push_back(data_);
 	}
 
-	Weight wit = goPLA(data);
+	PLA pla = PLA();
+	PLA::Weight wit = pla.PLA::goPLA(data);
 
 	cout << "The final w vector:" << endl;
 	cout << "w0 = " << wit.w0 << "; w1 = " << wit.w1 << "; w2 = " << wit.w2 << "; w3 = " << wit.w3 << "; w4 = " << wit.w4 << endl;
